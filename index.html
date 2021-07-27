@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+  <title>Shopping List</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/toastr.css">
+  <link rel="stylesheet" href="css/application.css">
+</head>
+<body>
+  <div class="container" ng-controller="ShoppingListController">
+    <div data-ng-init="showList()" class="row">
+      <div class="page-header">
+        <div class="span9">
+          <h1>Shopping List</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <table id="shopping-list" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in items | filter:search">
+            <td><strong>{{ item.product }}</strong></td>
+            <td>{{ item.quantity }}</td>
+            <td>
+              <button class="btn btn-danger btn-small" ng-click="deleteItem(item, $index)">
+                <i class="icon-trash icon-white"></i> Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <form class="row form-inline" name="validatePresetValues">
+      <input type="text" ng-model="item.product" placeholder="Product" required>
+      <input type="number" ng-model="item.quantity" placeholder="Quantity" class="input-small" required>
+      <button class="btn btn-success" ng-disabled="validatePresetValues.$invalid" ng-click="addItem()">
+        <i class="icon-plus icon-white"></i> Add
+      </button>
+    </form>
+  </div>
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/toastr.min.js"></script>
+  <script src="app/controllers.js"></script>
+  <script src="lib/pouchdb.min.js"></script>
+
+</body>
+</html>

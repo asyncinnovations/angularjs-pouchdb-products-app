@@ -1,0 +1,10 @@
+#shopping-list td, #shopping-list th {
+	text-align: center;
+}
+.bought-true {
+	text-decoration: line-through;
+	color: red;
+}
+.page-header {
+    padding-bottom: 50px;
+}
