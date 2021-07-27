@@ -20,7 +20,7 @@ List Products in View
 -----------------------------------
 Show products in <b>view</b>:
 
-![List Products](https://github.com/asyncinnovations/angularjs-pouchdb-products-app/tree/master/img/docs/list-products.png)
+![List Products](https://github.com/asyncinnovations/angularjs-pouchdb-products-app/blob/master/img/docs/list-products.png)
 
 <pre>
 	&lt;div ng-controller="ShoppingListController"&gt;
